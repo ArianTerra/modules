@@ -10,9 +10,9 @@ while (input != "exit")
 {
     Console.Write("\nFileManager " + fileManager.Path + "> ");
     input = Console.ReadLine();
-    
+
     var inputArgs = input.Split(' ', 2);
-    
+
     if (inputArgs[0] == "open" || inputArgs[0] == "cd")
     {
         if (inputArgs.Length < 2)
@@ -20,7 +20,7 @@ while (input != "exit")
             Console.WriteLine("[!] Not enough arguments provided");
             continue;
         }
-        
+
         OpenFileOrDirectory(inputArgs[1]);
     }
 
@@ -40,7 +40,7 @@ while (input != "exit")
         if (inputArgs[1] == "filename") // this is aliases for FileSystemInfo properties
         {
             SortPrintFiles("Name");
-        } 
+        }
         else if (inputArgs[1] == "created")
         {
             SortPrintFiles("CreationTime");
