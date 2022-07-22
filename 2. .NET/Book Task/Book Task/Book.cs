@@ -10,6 +10,6 @@
         
         public DateOnly Date { get; set; }
         
-        public string Formate { get; set; }
+        public string Format { get; set; }
     }
 }

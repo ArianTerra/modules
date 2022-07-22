@@ -8,7 +8,7 @@ namespace Book_Task
         {
             RuleFor(book => book.Name).NotEmpty().NotNull().Length(1, 100);
             RuleFor(book => book.Author).NotEmpty().NotNull().Length(1, 50);
-            RuleFor(book => book.Formate).NotEmpty().NotNull();
+            RuleFor(book => book.Format).NotEmpty().NotNull();
         }
     }
 }
