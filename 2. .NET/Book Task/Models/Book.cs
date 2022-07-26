@@ -1,4 +1,4 @@
-﻿namespace Book_Task
+﻿namespace Book_Task.Models
 {
     public class Book
     {
@@ -8,7 +8,7 @@
         
         public int Pages { get; set; }
         
-        public DateOnly Date { get; set; }
+        public string Date { get; set; }
         
         public string Format { get; set; }
     }
