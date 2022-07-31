@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Book_Task.Helpers
+namespace Book_Task.Services
 {
     /// <summary>
     /// Parses regex group values into specified class using group names
@@ -10,7 +10,7 @@ namespace Book_Task.Helpers
     {
         private readonly string _data;
         private readonly string _pattern;
-        
+
         public RegexClassParser(string data, string pattern)
         {
             _data = data;
@@ -28,11 +28,14 @@ namespace Book_Task.Helpers
 
             foreach (var groupName in regexGroupNames)
             {
-                if (groupName == "0") continue; // skip root group
+                if (groupName == "0")
+                {
+                    continue; // skip root group
+                }
 
                 string typeName = "string";
                 string name = "";
-                
+
                 if (groupName.Contains('_'))
                 {
                     var split = groupName.Split('_', 2);
@@ -63,7 +66,7 @@ namespace Book_Task.Helpers
                     {
                         throw new ArgumentException($"Type {typeName} does not exist");
                     }
-                    
+
                     var parseMethod = t.GetMethod("Parse", new []{typeof(string)});
                     if (parseMethod == null)
                     {
@@ -71,25 +74,31 @@ namespace Book_Task.Helpers
                     }
 
                     var newValue = parseMethod.Invoke(null, new object[] { value });
-                    
+
                     property.SetValue(obj, newValue);
                 }
-                
             }
 
             return obj;
         }
-        
+
         private static Type GetType(string typeName)
         {
             var type = Type.GetType(typeName);
-            if (type != null) return type;
+            if (type != null)
+            {
+                return type;
+            }
+
             foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
             {
                 type = a.GetType(typeName);
                 if (type != null)
+                {
                     return type;
+                }
             }
+
             return null;
         }
     }

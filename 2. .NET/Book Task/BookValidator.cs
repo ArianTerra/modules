@@ -14,7 +14,7 @@ namespace Book_Task
                 .WithMessage(book => BookValidationErrorMessages.Author);
             RuleFor(book => book.Pages).GreaterThan(0)
                 .WithMessage(book => BookValidationErrorMessages.Pages);
-            RuleFor(book => book.Date).NotEmpty().NotNull().Must(BeDateOnlyOrYear)
+            RuleFor(book => book.DateString).NotEmpty().NotNull().Must(BeDateOnlyOrYear)
                 .WithMessage(book => BookValidationErrorMessages.Date);
             RuleFor(book => book.Format).NotEmpty().NotNull().Must(BePreferredType)
                 .WithMessage(book => BookValidationErrorMessages.Format);

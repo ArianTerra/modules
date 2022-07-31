@@ -1,11 +1,11 @@
-﻿using Book_Task.Helpers;
-using Book_Task.Models;
+﻿using Book_Task.Models;
+using Book_Task.Services;
 
 namespace Book_Task
 {
     public class BookParser
     {
-        private string _pattern = @"(?<Author>.+) – (?<Name>.+), (?<Pages_System_Int32>\d+) \((?<Date>.+)\).(?<Format>.+)";
+        private string _pattern = @"(?<Author>.+) – (?<Name>.+), (?<Pages_System_Int32>\d+) \((?<DateString>.+)\).(?<Format>.+)";
 
         public Book Parse(string data)
         {
