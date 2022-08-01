@@ -1,6 +1,5 @@
 ﻿using OCP_Another_solution.Domain;
 using OCP_Another_solution.Specification.Abstract;
-using System;
 using System.Linq;
 
 namespace OCP_Another_solution
