@@ -16,7 +16,7 @@ public class ArticleController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] int page = 1, [FromQuery] int pageSize = 30, [FromQuery] string? nameStartsWith = null)
+    public async Task<IActionResult> Get([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string? nameStartsWith = null)
     {
         var itemsCount = await _articleService.GetArticleCountAsync(nameStartsWith); //TODO remove this logic to business
         var pageCount = (int)Math.Ceiling((double)itemsCount / pageSize);
