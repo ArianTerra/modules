@@ -22,7 +22,7 @@ namespace Task1.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Task1.DataAccess.DomainModels.Article", b =>
+            modelBuilder.Entity("Task2.DataAccess.DomainModels.Article", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
