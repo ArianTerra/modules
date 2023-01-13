@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflection</title>
+</head>
+<body>
+    <p>See page source code and browser console for results. There are two scripts included, one of them was created
+    in previous task. In this task we can see methods and fields of created object.</p>
+    <br>
+    <a href="../index.html">Back to index</a>
+    <script src="../js/1_Shape.js"></script>
+    <script src="../js/2_Reflection.js"></script>
+    <script>
+        let obj = {
+            a: 5,
+            b: "hello",
+
+            print : function () {
+                console.log(a + b);
+            }
+        }
+
+        let circle = new Circle(2);
+
+        // you can change circle to object created earlier to see the difference
+        for(let member of getMembers(circle)) {
+            console.log(member);
+        }
+    </script>
+</body>
+</html>

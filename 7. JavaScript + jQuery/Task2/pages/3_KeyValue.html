@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KeyValue</title>
+</head>
+<body>
+    <p>Open source code and browser console to see the results</p>
+    <br>
+    <a href="../index.html">Back to index</a>
+    <script src="../js/3_KeyValue.js"></script>
+    <script>
+        let obj = {
+            a: 1,
+            b: "wassup",
+            c: false,
+            d: new Date()
+        }
+
+        for(let x of getKeyValue(obj)) {
+            console.log(x);
+        }
+    </script>
+</body>
+</html>
