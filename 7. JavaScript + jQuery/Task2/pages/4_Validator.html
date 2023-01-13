@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validator</title>
+</head>
+<body>
+    <p>Open source code and browser console to see the results.
+    IMHO it's better to use third party libraries for this cos this solution is not perfect.</p>
+    <br>
+    <a href="../index.html">Back to index</a>
+    <script src="../js/4_Validator.js"></script>
+    <script>
+        let wrong = "abc";
+
+        let phone = "+380505000000";
+        let validatorPhone = new PhoneValidator();
+        console.log(phone + " : " + validatorPhone.isValid(phone));
+        console.log(wrong + " : " + validatorPhone.isValid(wrong));
+
+        let email = "a.serediuk@student.csn.khai.edu";
+        let validatorEmail = new EmailValidator();
+        console.log(email + " : " + validatorEmail.isValid(email));
+        console.log(wrong + " : " + validatorEmail.isValid(wrong));
+    </script>
+</body>
+</html>

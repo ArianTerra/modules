@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shapes</title>
+</head>
+<body>
+    <p>Open source code and browser console to see the results</p>
+    <br>
+    <a href="../index.html">Back to index</a>
+    <script src="../js/1_Shape.js"></script>
+    <script>
+        // example with shapes
+        let shapes = [new Circle(3), new Square(5)];
+
+        for (let shape of shapes) {
+            console.log(shape.GetArea());
+        }
+    </script>
+</body>
+</html>
